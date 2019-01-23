@@ -1,7 +1,7 @@
 # bobtrustline
 
 
-## Bob receives the credit 
+## Bob receives the credit - Alice to use this api to send the credit
 
 API -> /api/pay to record the payment and show in terminal the debt deails
 
