@@ -10,11 +10,15 @@ public class TrustLineServiceImpl implements TrustLineService {
 	Logger logger = LoggerFactory.getLogger(getClass());
 	
 	private Number debt;
+	
+	public TrustLineServiceImpl() {
+		debt = 0;
+		logger.info("Welcome to the Trustline");
+		logger.info("Trustline balance is: " + debt);
+	}
 
     @Override
     public Number recordCredit(Number creditedAmount) {
-    	if (debt == null)
-    		debt = 0;
        return debt = debt.doubleValue() + creditedAmount.doubleValue();
     }
 

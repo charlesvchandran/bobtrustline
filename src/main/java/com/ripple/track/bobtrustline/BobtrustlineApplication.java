@@ -13,8 +13,6 @@ public class BobtrustlineApplication {
 	static Logger logger = LoggerFactory.getLogger(BobtrustlineApplication.class);
 
 	public static void main(String[] args) {
-		logger.info("Welcome to the Trustline");
-		logger.info("Trustline balance is: 0");
 		SpringApplication.run(BobtrustlineApplication.class, args);
 	}
 
