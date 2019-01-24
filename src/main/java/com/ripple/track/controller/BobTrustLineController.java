@@ -28,10 +28,11 @@ public class BobTrustLineController {
 
     @PostMapping("/api/payment")
     public HttpEntity<String> receiveCredit(@RequestBody TrustLineCredit trustLineCredit) {
-        trustLineService.recordCredit(trustLineCredit.getCredit());
+    	Number debt = trustLineService.recordCredit(trustLineCredit.getCredit());
         trustLineService.trustLineDebit(trustLineCredit.getCredit());
         Map<String, Object> modelMap = new HashMap<>();
         modelMap.put("success", true);
+        modelMap.put("debt", debt);
 		try {
 				String response = new ObjectMapper().writeValueAsString(modelMap);
 				return new ResponseEntity<String>(response, HttpStatus.OK);

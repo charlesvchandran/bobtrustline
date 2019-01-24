@@ -8,16 +8,14 @@ import org.springframework.stereotype.Component;
 public class TrustLineServiceImpl implements TrustLineService {
 
 	Logger logger = LoggerFactory.getLogger(getClass());
-
-    private Number debt;
-    
-    public TrustLineServiceImpl() {
-    	debt = 0;
-    }
+	
+	private Number debt;
 
     @Override
-    public void recordCredit(Number creditedAmount) {
-        debt = debt.doubleValue() + creditedAmount.doubleValue();
+    public Number recordCredit(Number creditedAmount) {
+    	if (debt == null)
+    		debt = 0;
+       return debt = debt.doubleValue() + creditedAmount.doubleValue();
     }
 
     @Override
